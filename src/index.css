@@ -89,3 +89,17 @@ code {
   perspective: 1000px;
   transform-style: preserve-3d;
 }
+
+/* Section Label - Global Style */
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray-text-light);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+}
