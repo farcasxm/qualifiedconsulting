@@ -8,9 +8,9 @@ const Footer = () => {
 
   const footerLinks = {
     company: [
-      { name: 'About Us', href: '#about' },
-      { name: 'Services', href: '#services' },
-      { name: 'Why Choose Us', href: '#why-us' },
+      { name: 'About', href: '#about' },
+      { name: 'Qualifications', href: '#qualifications' },
+      { name: 'Why Choose Me', href: '#why-us' },
       { name: 'Contact', href: '#contact' },
     ],
     legal: [
@@ -24,11 +24,15 @@ const Footer = () => {
     { icon: <FiLinkedin />, href: '#', label: 'LinkedIn' },
     { icon: <FiTwitter />, href: '#', label: 'Twitter' },
     { icon: <FiFacebook />, href: '#', label: 'Facebook' },
-    { icon: <FiMail />, href: 'mailto:info@qualifiedconsulting.ro', label: 'Email' },
+    { icon: <FiMail />, href: 'mailto:office@qualifiedconsulting.ro', label: 'Email' },
   ]
 
   return (
     <footer className="footer">
+      <div className="footer-geometric-bg">
+        <div className="footer-grid"></div>
+      </div>
+
       <div className="footer-container">
         <div className="footer-content">
           <motion.div
@@ -38,7 +42,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="footer-logo">Qualified Consulting</h3>
+            <h3 className="footer-logo">QUALIFIED<br />CONSULTING</h3>
             <p className="footer-description">
               Transforming businesses through expert consulting and strategic solutions. 
               Your success is our mission.
@@ -50,7 +54,7 @@ const Footer = () => {
                   href={social.href}
                   className="social-link"
                   aria-label={social.label}
-                  whileHover={{ scale: 1.2, y: -3 }}
+                  whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                 >
                   {social.icon}
@@ -102,16 +106,17 @@ const Footer = () => {
           >
             <h4 className="footer-title">Contact</h4>
             <div className="footer-contact">
-              <p>Email: info@qualifiedconsulting.ro</p>
-              <p>Phone: +40 XXX XXX XXX</p>
+              <p>Email: office@qualifiedconsulting.ro</p>
+              <p>Phone: +40 751 222 417</p>
               <p>Location: Romania</p>
             </div>
           </motion.div>
         </div>
 
+        <div className="footer-divider"></div>
+
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Qualified Consulting. All rights reserved.</p>
-          <p>Designed with excellence for your success.</p>
+          <p>Copyright © {currentYear} Qualified Consulting SRL | CUI: 29865760 | J12/599/2012 | Cluj-Napoca, CJ, RO, GMT +2</p>
         </div>
       </div>
     </footer>

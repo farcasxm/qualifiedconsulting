@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi'
+import { useLanguage } from '../context/LanguageContext'
+import { translations } from '../data/translations'
 import './Contact.css'
 
 const Contact = () => {
+  const { language } = useLanguage()
+  const t = translations[language]
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,28 +24,27 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Handle form submission
     console.log('Form submitted:', formData)
-    alert('Thank you for your message! We will get back to you soon.')
+    alert(t.contact.form.success)
     setFormData({ name: '', email: '', company: '', message: '' })
   }
 
   const contactInfo = [
     {
       icon: <FiMail />,
-      title: 'Email',
-      content: 'info@qualifiedconsulting.ro',
-      link: 'mailto:info@qualifiedconsulting.ro'
+      title: t.contact.email,
+      content: 'office@qualifiedconsulting.ro',
+      link: 'mailto:office@qualifiedconsulting.ro'
     },
     {
       icon: <FiPhone />,
-      title: 'Phone',
-      content: '+40 XXX XXX XXX',
-      link: 'tel:+40XXXXXXXXX'
+      title: t.contact.phone,
+      content: '+40 751 222 417',
+      link: 'tel:+40751222417'
     },
     {
       icon: <FiMapPin />,
-      title: 'Location',
+      title: t.contact.location,
       content: 'Romania',
       link: '#'
     },
@@ -49,6 +52,11 @@ const Contact = () => {
 
   return (
     <section id="contact" className="contact">
+      <div className="contact-geometric-bg">
+        <div className="contact-grid"></div>
+        <div className="contact-shape"></div>
+      </div>
+
       <div className="contact-container">
         <motion.div
           className="section-header"
@@ -57,11 +65,10 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-label">Get in Touch</span>
-          <h2 className="section-title">Let's Start a Conversation</h2>
+          <span className="section-label">{t.contact.label}</span>
+          <h2 className="section-title">{t.contact.title}</h2>
           <p className="section-description">
-            Ready to transform your business? Contact us today to discuss how 
-            we can help you achieve your goals.
+            {t.contact.description}
           </p>
         </motion.div>
 
@@ -73,10 +80,9 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3>Contact Information</h3>
+            <h3 className="contact-info-title">{t.contact.infoTitle}</h3>
             <p className="contact-intro">
-              We're here to help. Reach out to us through any of these channels, 
-              and we'll respond as soon as possible.
+              {t.contact.intro}
             </p>
 
             <div className="contact-items">
@@ -89,10 +95,11 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                  whileHover={{ scale: 1.05, x: 5 }}
+                  whileHover={{ x: 4, scale: 1.02 }}
                 >
+                  <div className="contact-item-border"></div>
                   <div className="contact-icon">{item.icon}</div>
-                  <div>
+                  <div className="contact-item-content-wrapper">
                     <div className="contact-item-title">{item.title}</div>
                     <div className="contact-item-content">{item.content}</div>
                   </div>
@@ -110,7 +117,7 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="form-group">
-              <label htmlFor="name">Full Name</label>
+              <label htmlFor="name">{t.contact.form.name}</label>
               <input
                 type="text"
                 id="name"
@@ -118,12 +125,12 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                placeholder="John Doe"
+                placeholder={t.contact.form.namePlaceholder}
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="email">Email Address</label>
+              <label htmlFor="email">{t.contact.form.email}</label>
               <input
                 type="email"
                 id="email"
@@ -131,24 +138,24 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                placeholder="john@company.com"
+                placeholder={t.contact.form.emailPlaceholder}
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="company">Company Name</label>
+              <label htmlFor="company">{t.contact.form.company}</label>
               <input
                 type="text"
                 id="company"
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                placeholder="Your Company"
+                placeholder={t.contact.form.companyPlaceholder}
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="message">Message</label>
+              <label htmlFor="message">{t.contact.form.message}</label>
               <textarea
                 id="message"
                 name="message"
@@ -156,18 +163,19 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows="5"
-                placeholder="Tell us about your project..."
+                placeholder={t.contact.form.messagePlaceholder}
               ></textarea>
             </div>
 
             <motion.button
               type="submit"
               className="submit-button"
-              whileHover={{ scale: 1.02, boxShadow: '0 10px 30px rgba(37, 99, 235, 0.3)' }}
+              whileHover={{ scale: 1.02, x: 4 }}
               whileTap={{ scale: 0.98 }}
             >
-              Send Message
+              <span>{t.contact.form.submit}</span>
               <FiSend />
+              <div className="submit-button-accent"></div>
             </motion.button>
           </motion.form>
         </div>

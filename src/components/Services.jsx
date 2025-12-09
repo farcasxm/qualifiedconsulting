@@ -7,39 +7,51 @@ const Services = () => {
   const services = [
     {
       icon: <FiTarget />,
-      title: 'Strategic Planning',
-      description: 'Comprehensive business strategy development to align your goals with actionable roadmaps for sustainable growth.',
-      color: '#2563eb'
+      title: 'Organizational Diagnosis & Departmental Analysis',
+      description: 'Comprehensive assessment of your organizational structure and departmental functions to identify opportunities for improvement.',
+      color: '#8b5cf6'
     },
     {
       icon: <FiTrendingUp />,
-      title: 'Business Growth',
-      description: 'Data-driven approaches to accelerate revenue, expand market share, and scale your operations effectively.',
-      color: '#10b981'
+      title: 'Organizational Strategies & Reorganizations',
+      description: 'Strategic planning, organizational restructuring, and negotiation of working conditions and terms to optimize your business operations.',
+      color: '#7c3aed'
     },
     {
       icon: <FiUsers />,
-      title: 'Organizational Development',
-      description: 'Transform your team structure, culture, and processes to maximize productivity and employee engagement.',
-      color: '#f59e0b'
+      title: 'Personnel Needs Assessment',
+      description: 'Evaluation of staffing requirements and creation of comprehensive personnel strategies aligned with your business objectives.',
+      color: '#a78bfa'
     },
     {
       icon: <FiBarChart2 />,
-      title: 'Performance Optimization',
-      description: 'Identify bottlenecks, streamline workflows, and implement best practices to enhance operational efficiency.',
+      title: 'Performance Evaluation Systems',
+      description: 'Creation and implementation of professional performance evaluation systems, including individual and group assessments, professional and skills tests, and Hogan behavioral inventory.',
       color: '#8b5cf6'
     },
     {
       icon: <FiShield />,
-      title: 'Risk Management',
-      description: 'Comprehensive risk assessment and mitigation strategies to protect your business and ensure compliance.',
-      color: '#ef4444'
+      title: 'Compensation & Benefits',
+      description: 'Establishment of salary grids and benefits structures that attract, retain, and motivate top talent.',
+      color: '#7c3aed'
     },
     {
       icon: <FiZap />,
-      title: 'Digital Transformation',
-      description: 'Modernize your technology infrastructure and processes to stay competitive in the digital age.',
-      color: '#06b6d4'
+      title: 'Talent Management',
+      description: 'Creation of talent maps (HIPO), succession planning, and detailed reports with recommendations for future actions.',
+      color: '#a78bfa'
+    },
+    {
+      icon: <FiUsers />,
+      title: 'Coaching & Development',
+      description: 'One-on-one coaching, group and team coaching, creation of constructive dialogues, and conflict negotiation support.',
+      color: '#8b5cf6'
+    },
+    {
+      icon: <FiTarget />,
+      title: 'Team Building & Activities',
+      description: 'Support in organizing team activities or across teams, including teambuilding initiatives that strengthen collaboration and engagement.',
+      color: '#7c3aed'
     },
   ]
 
@@ -75,10 +87,14 @@ const Services = () => {
           transition={{ duration: 0.6 }}
         >
           <span className="section-label">Our Services</span>
-          <h2 className="section-title">Expert Solutions for Your Business</h2>
+          <h2 className="section-title">Guiding Your Business Through</h2>
           <p className="section-description">
-            We offer comprehensive consulting services tailored to your unique needs, 
-            helping you achieve sustainable growth and operational excellence.
+            Comprehensive human resources consulting services designed to transform your organization, 
+            optimize performance, and build sustainable success through strategic expertise and practical implementation.
+          </p>
+          <p className="section-description" style={{ marginTop: '1rem', fontStyle: 'italic', color: 'var(--text-secondary)' }}>
+            Leadership focus: Individual/own management, team management, business management. 
+            Talent and excellence – focus on execution and excellence. Detailed reports and recommendations for future actions.
           </p>
         </motion.div>
 
