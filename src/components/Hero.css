@@ -4,8 +4,32 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: var(--black);
+  background: linear-gradient(135deg, var(--anthracite-dark) 0%, var(--anthracite-medium) 50%, var(--anthracite-dark) 100%);
   padding-top: 80px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, var(--anthracite-dark) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent 0%, var(--anthracite-medium) 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .hero-geometric-bg {
@@ -72,6 +96,56 @@
     linear-gradient(0deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%);
   background-size: 200% 200%;
   animation: lineMove 15s ease-in-out infinite;
+}
+
+.hero-orange-glow {
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  top: 15%;
+  right: -250px;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.35) 0%, rgba(245, 130, 32, 0.22) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: orangePulse 8s ease-in-out infinite;
+  z-index: 0;
+}
+
+.hero-orange-glow-2 {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  bottom: 5%;
+  left: -200px;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.32) 0%, rgba(245, 130, 32, 0.18) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(130px);
+  animation: orangePulse 10s ease-in-out infinite 2s;
+  z-index: 0;
+}
+
+.hero-orange-glow-3 {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  top: 50%;
+  left: 10%;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.28) 0%, rgba(245, 130, 32, 0.15) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(110px);
+  animation: orangePulse 12s ease-in-out infinite 4s;
+  z-index: 0;
+}
+
+@keyframes orangePulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
 }
 
 @keyframes lineMove {
@@ -275,7 +349,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: grayscale(100%) contrast(1.2) brightness(0.95);
+  filter: contrast(1.1) brightness(0.98);
   position: relative;
   z-index: 1;
   background: var(--gray-dark);
@@ -423,12 +497,12 @@
   height: 60px;
   font-size: 1.25rem;
   font-weight: 500;
-  color: var(--gray-text-light);
+  color: var(--gray-text);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   white-space: nowrap;
   transition: color 0.3s ease, opacity 0.3s ease;
-  opacity: 0.6;
+  opacity: 0.85;
 }
 
 .logo-item:hover {

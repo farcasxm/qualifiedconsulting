@@ -55,6 +55,9 @@ const Contact = () => {
       <div className="contact-geometric-bg">
         <div className="contact-grid"></div>
         <div className="contact-shape"></div>
+        <div className="contact-orange-glow"></div>
+        <div className="contact-orange-glow-2"></div>
+        <div className="contact-orange-glow-3"></div>
       </div>
 
       <div className="contact-container">

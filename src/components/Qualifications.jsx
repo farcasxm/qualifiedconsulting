@@ -59,6 +59,9 @@ const Qualifications = () => {
         <div className="qual-shape-1"></div>
         <div className="qual-shape-2"></div>
         <div className="qual-lines"></div>
+        <div className="qual-orange-glow"></div>
+        <div className="qual-orange-glow-2"></div>
+        <div className="qual-orange-glow-3"></div>
       </div>
 
       <div className="qualifications-container">

@@ -49,6 +49,9 @@ const Hero = () => {
         <div className="geometric-shape shape-2"></div>
         <div className="geometric-shape shape-3"></div>
         <div className="geometric-lines"></div>
+        <div className="hero-orange-glow"></div>
+        <div className="hero-orange-glow-2"></div>
+        <div className="hero-orange-glow-3"></div>
       </div>
 
       <div className="hero-container">

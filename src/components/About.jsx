@@ -39,6 +39,9 @@ const About = () => {
         <div className="about-shape-1"></div>
         <div className="about-shape-2"></div>
         <div className="about-lines"></div>
+        <div className="about-orange-glow"></div>
+        <div className="about-orange-glow-2"></div>
+        <div className="about-orange-glow-3"></div>
       </div>
 
       <div className="about-container">

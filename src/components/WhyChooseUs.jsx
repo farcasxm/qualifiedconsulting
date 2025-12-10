@@ -53,6 +53,9 @@ const WhyChooseUs = () => {
         <div className="why-grid"></div>
         <div className="why-shape-1"></div>
         <div className="why-shape-2"></div>
+        <div className="why-orange-glow"></div>
+        <div className="why-orange-glow-2"></div>
+        <div className="why-orange-glow-3"></div>
       </div>
 
       <div className="why-container">

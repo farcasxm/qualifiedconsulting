@@ -1,8 +1,32 @@
 .why-choose-me {
   padding: 8rem 0;
   position: relative;
-  background: var(--black);
+  background: linear-gradient(135deg, var(--anthracite-medium) 0%, var(--anthracite-dark) 50%, var(--anthracite-medium) 100%);
   overflow: hidden;
+}
+
+.why-choose-me::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, var(--anthracite-dark) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.why-choose-me::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent 0%, var(--anthracite-dark) 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .why-geometric-bg {
@@ -42,6 +66,56 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   transform: rotate(-45deg);
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.why-orange-glow {
+  position: absolute;
+  width: 850px;
+  height: 850px;
+  top: 15%;
+  left: -220px;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.36) 0%, rgba(245, 130, 32, 0.21) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(128px);
+  animation: orangePulse 9s ease-in-out infinite;
+  z-index: 0;
+}
+
+.why-orange-glow-2 {
+  position: absolute;
+  width: 750px;
+  height: 750px;
+  bottom: 20%;
+  right: -180px;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.31) 0%, rgba(245, 130, 32, 0.17) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(122px);
+  animation: orangePulse 10s ease-in-out infinite 1.8s;
+  z-index: 0;
+}
+
+.why-orange-glow-3 {
+  position: absolute;
+  width: 680px;
+  height: 680px;
+  top: 50%;
+  right: 25%;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.28) 0%, rgba(245, 130, 32, 0.15) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(118px);
+  animation: orangePulse 11.5s ease-in-out infinite 3.5s;
+  z-index: 0;
+}
+
+@keyframes orangePulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.23);
+  }
 }
 
 .why-container {
@@ -310,7 +384,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: grayscale(100%) contrast(1.2) brightness(0.95);
+  filter: contrast(1.1) brightness(0.98);
   position: relative;
   z-index: 1;
   background: var(--gray-dark);

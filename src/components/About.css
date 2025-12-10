@@ -1,11 +1,35 @@
 .about {
   padding: 8rem 0;
   position: relative;
-  background: var(--black);
+  background: linear-gradient(135deg, var(--anthracite-medium) 0%, var(--anthracite-dark) 50%, var(--anthracite-medium) 100%);
   overflow: hidden;
   min-height: 100vh;
   display: flex;
   align-items: center;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, var(--anthracite-dark) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent 0%, var(--anthracite-dark) 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .about-geometric-bg {
@@ -60,6 +84,56 @@
 @keyframes lineMove {
   0%, 100% { background-position: 0% 0%, 0% 0%; }
   50% { background-position: 100% 100%, 100% 100%; }
+}
+
+.about-orange-glow {
+  position: absolute;
+  width: 850px;
+  height: 850px;
+  top: 25%;
+  left: -200px;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.34) 0%, rgba(245, 130, 32, 0.2) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(125px);
+  animation: orangePulse 9s ease-in-out infinite;
+  z-index: 0;
+}
+
+.about-orange-glow-2 {
+  position: absolute;
+  width: 750px;
+  height: 750px;
+  bottom: 15%;
+  right: -150px;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.3) 0%, rgba(245, 130, 32, 0.16) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(115px);
+  animation: orangePulse 11s ease-in-out infinite 1.5s;
+  z-index: 0;
+}
+
+.about-orange-glow-3 {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  top: 60%;
+  right: 20%;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.26) 0%, rgba(245, 130, 32, 0.14) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(105px);
+  animation: orangePulse 10s ease-in-out infinite 3s;
+  z-index: 0;
+}
+
+@keyframes orangePulse {
+  0%, 100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
 }
 
 .about-container {
@@ -262,7 +336,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: grayscale(100%) contrast(1.2) brightness(0.95);
+  filter: contrast(1.1) brightness(0.98);
   position: relative;
   z-index: 1;
   background: var(--gray-dark);

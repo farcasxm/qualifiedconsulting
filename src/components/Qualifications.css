@@ -1,8 +1,32 @@
 .qualifications {
   padding: 9rem 0 8rem;
   position: relative;
-  background: var(--black);
+  background: linear-gradient(135deg, var(--anthracite-dark) 0%, var(--anthracite-medium) 50%, var(--anthracite-dark) 100%);
   overflow: hidden;
+}
+
+.qualifications::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, var(--anthracite-medium) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.qualifications::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent 0%, var(--anthracite-medium) 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .qualifications-geometric-bg {
@@ -52,6 +76,56 @@
     linear-gradient(0deg, transparent 0%, rgba(255, 255, 255, 0.03) 50%, transparent 100%);
   background-size: 250% 250%;
   animation: lineMove 18s ease-in-out infinite;
+}
+
+.qual-orange-glow {
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  top: 20%;
+  right: -250px;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.33) 0%, rgba(245, 130, 32, 0.19) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(135px);
+  animation: orangePulse 9.5s ease-in-out infinite;
+  z-index: 0;
+}
+
+.qual-orange-glow-2 {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  bottom: 10%;
+  left: -200px;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.29) 0%, rgba(245, 130, 32, 0.15) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(125px);
+  animation: orangePulse 10.5s ease-in-out infinite 2s;
+  z-index: 0;
+}
+
+.qual-orange-glow-3 {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  top: 55%;
+  left: 15%;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.27) 0%, rgba(245, 130, 32, 0.14) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: orangePulse 11s ease-in-out infinite 4.5s;
+  z-index: 0;
+}
+
+@keyframes orangePulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.22);
+  }
 }
 
 @keyframes lineMove {
@@ -264,7 +338,7 @@
   color: var(--white);
   font-weight: 600;
   padding: 0.25rem 0.75rem;
-  background: var(--black);
+  background: linear-gradient(135deg, var(--anthracite-dark) 0%, var(--anthracite-medium) 50%, var(--anthracite-dark) 100%);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
